@@ -30,5 +30,4 @@ class User < ActiveRecord::Base
 		self.fish = BCrypt::Engine.hash_secret(password, self.salt)
 
 	end
-
 end
