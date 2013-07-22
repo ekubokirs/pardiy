@@ -1,4 +1,4 @@
 pardiy
 ======
 
-pair project two
+ParDIY, WDI-Pair Project
