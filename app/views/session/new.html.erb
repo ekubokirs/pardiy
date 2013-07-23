@@ -1,51 +1,76 @@
+<%#= Overall page %>
 <div class="background">
+
+	<%#= Logo section %>
 	<div class= "row">
 		<div class="large-12 columns">
 			<h1 class="pagehead logo">ParDIY</h1>
-		</div>
-	</div> 
+		</div> <%#= end of "large-12 columns"%>
+	</div> <%#= end of "row"%>
+
+	<%#= ********************************************** Section includes registration instructions, email & password fields, show password button, sign in  button
+	********************************************** %>
 	<div class="row">
 		<div class= 'large-12 columns'>
 			<div class='large-4 columns'>
+
+				<%#= reg instructions %>
 				<div id= 'signIn'>
 					To sign up: <br>
 					1) Enter in email <br>
 					2) Leave password blank <br>
 					3) Click 'Sign in'
-				</div>
+				</div> <%#= end of "signIn" %>
+
 				<form action='/login' method="POST">
-					<div>
-						<label class= 'control-label' for='inputEmail'>Email</label>
-						<div class= 'controls'>
-							<input type='text' id='inputEmail' placeholder='Email' name='email'>
-						</div>
-					</div>
+
+					<%#= Email field %>
+					<label class= 'control-label' for='inputEmail'>Email</label>
+					<div class= 'controls'>
+						<input type='text' id='inputEmail' placeholder='Email' name='email'>
+					</div> <%#= end of "controls" %>
+
+					<%#= Password field %>
 					<label class= 'control-label' for= 'inputPassword'> Password </label>
 					<div class= 'controls'>
-						<input type= 'password' id='inputPassword' placeholder='Password' name='password'/>
-							<div class= 'row'>
-								<div class= 'large-8 columns'>
-									<button id="toggle-password-field" class="small button alert">Show Password</button>
-								</div>
-								<div class= 'large-4 columns'>
-									<div class= 'controls'>
-										<button type= 'submit' class= 'small button regular'> Sign in </button>
-									</div>
-								</div>
-							</div>
-						</div>
-				</form>
-			</div>
+						<input type= 'password' id='inputPassword' placeholder='Password' name='password'>
+
+						<div class= 'row'>
+
+							<%#= Show Password button %>
+							<div class= 'large-8 columns'>
+								<button id="toggle-password-field" class="small button alert">Show Password</button>
+							</div> <%#= end of "large-8 columns" %>
+
+							<%#= Sign In button %>
+							<div class= 'large-4 columns'>
+								<div class= 'controls'>
+									<button type= 'submit' class= 'small button regular'> Sign in </button>
+								</div> <%#= end of "controls" %>
+							</div> <%#= end of "large-4 columns" %>
+						</div> <%#= end of "rows" %>
+					</div> <%#= end of "controls" %>
+				</form> <%#= end of "action='/login' method='POST' "%>
+			</div><%#= end of "large-4 columns" %>
+
+			<%#= *********** 
+			Welcome message
+			**************** %>
 			<div class='large-8 columns'>
-				<h2 id='greeting' class="large-12 columns">Party On!</h2>
-				<div class='bla' class="large-12 columns">Welcome to ParDIY!  We're psyched to see the awesome parties that each of you create and throw!  Have a great time!
-				</div>
+				<div class= 'row'>
+					<h2 id='greeting' class="large-12 columns">Party On!</h2>
+				</div> <%#= end of "row" %>
+				<div class="row">
+					<div class='bla' class="large-12 columns">Welcome to ParDIY!  We're psyched to see the awesome parties that each of you create and throw!  Have a great time!
+					</div> <%#= end of "bla large-12 columns"%>
+				</div> <%#= end of "row"%>
 				<div class="large-8 columns large-offset-2">
-					Love Always,<br>
+					<br>
+					Love always,<br>
 					Theresa and Emilia
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+				</div> <%#= end of "large-8 columns large-offset-2"%>
+			</div> <%#= end of "large-8 columns"%>
+		</div> <%#= end of "large-12 columns"%>
+	</div> <%#= end of "row"%>
+</div> <%#= end of "background"%>
 
