@@ -1,6 +1,3 @@
-html{
-	background-color: #dcdcdc;
-}
 .background{
 	border: 3px solid #c10538;
 	background-color: #f9fcff;
@@ -15,7 +12,7 @@ html{
 }
 .logo{
 	color: #4cced1;
-	font-family: 'Alex Brush', cursive;
+	font-family: 'Unkempt', cursive;
 	font-size: 67px
 }
 .pagetitle{
@@ -29,13 +26,35 @@ html{
 	text-align: center;
 	font-size: 40px;
 }
-
+#signUpInfo{
+	font-family: 'Caudex', cursive;
+}
 #signIn{
 	padding-bottom: 10px;
 }
-
+.control-label{
+	font-family: 'Caudex', cursive;
+}
 #greeting{
-	padding-bottom: 10px;
+	color: #002649;
+	font-family: 'Unkempt', cursive;
+	font-size: 45px;
+	text-align: center;
+}
+.bla{
+	color: #002649;
+	font-family: 'Caudex', cursive;
+	font-size: 30px;
+}
+#closing{
+	color: #002649;
+	font-family: 'Caudex', cursive;
+	font-size: 30px;
+}
+#names{
+	font-family: 'Alex Brush', cursive;
+	font-size: 45px;
+	margin: 15px;
 }
 .hide-text {
   display: none;
