@@ -12,6 +12,15 @@ class SessionController < ApplicationController
         user.save
 
         PasswordMailer.reset_email(user).deliver
+
+      else 
+        user = User.new
+        user.code = SecureRandom.urlsafe_base64
+        user.expires_at = Time.now + 48. hours
+        user.email = params[:email]
+        user.save
+
+        PasswordMailer.new_email(user).deliver
       end
       
     render :new

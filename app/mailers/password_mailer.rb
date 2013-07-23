@@ -8,4 +8,10 @@ class PasswordMailer < ActionMailer::Base
     
     mail to: @user.email, subject: "Change your ParDIY credentials"
   end
+
+  def new_email(user)
+    @user = user
+    
+    mail to: @user.email, subject: "Create your ParDIY credentials"
+  end
 end
