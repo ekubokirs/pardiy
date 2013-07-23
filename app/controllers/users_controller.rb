@@ -10,7 +10,6 @@ class UsersController < ApplicationController
   def new
     # if params[:id]
       @user = User.new 
-    
     # else
     #   redirect_to root_path
     # end
