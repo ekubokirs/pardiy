@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
 			
 			# if the password entered gets passed through the salt and returned as the same, the user is true
 			if user.fish == fish
-				return user
+				user
 			end
 
 		end

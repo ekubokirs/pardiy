@@ -6,11 +6,12 @@ $(function(){
 		// when password field is hidden execute this
 		if($(this).hasClass("passwordHidden")){
 			// shows the password field, button, and label
-			$('#inputPassword').fadeIn(300);
-			$('#passwordLabel').fadeIn(300);
-			$('#showPassword').fadeIn(300);
+			$('#inputPassword').show(300);
+			$('#passwordLabel').show(300);
+			$('#showPassword').show(300);
+			$('#resetInfo').show(300);
 			// hides the sign up instructions
-			$('#signUpInfo').fadeOut(300);
+			$('#signUpInfo').hide(300);
 			// changes text on the button
 			$(this).html('Click Here to Sign Up')
 			// removes class
@@ -20,11 +21,12 @@ $(function(){
 		// when the password field is there
 		else{
 			// hides password field, button and label
-			$('#inputPassword').fadeOut(300);
-			$('#passwordLabel').fadeOut(300);
-			$('#showPassword').fadeOut(300);
+			$('#inputPassword').hide(300);
+			$('#passwordLabel').hide(300);
+			$('#showPassword').hide(300);
+			$('#resetInfo').hide(300);
 			// adds sign up instructions
-			$('#signUpInfo').fadeIn(300);
+			$('#signUpInfo').show(300);
 			//changes button text
 			$(this).html('Click Here to Log In')
 			// adds class
