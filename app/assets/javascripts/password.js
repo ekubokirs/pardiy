@@ -31,5 +31,4 @@ $(function(){
 		if ($('hidden-strength').val() < MIN_STRENGTH){
 			return false;
 		}
-	});
 });
