@@ -1,29 +1,33 @@
 $(function(){
 	var MIN_STRENGTH = 3;
-
+  // define action to keyup
 	$('#userpassword').on('keyup', function(evt){
-		var s = zxcvbn($(this).val());
+	 var s = zxcvbn($(this).val());
 
-		 $('#strength-meter')
-      .removeClass('w-0')
-      .removeClass('w-1')
-      .removeClass('w-2')
-      .removeClass('w-3')
-      .removeClass('w-4')
-      .addClass('w-' + s.score);
+    // allow strength-meter to reflect pasword strength
+	 $('#strength-meter')
+    .removeClass('w-0')
+    .removeClass('w-1')
+    .removeClass('w-2')
+    .removeClass('w-3')
+    .removeClass('w-4')
+    .addClass('w-' + s.score);
 
-      $('#time-to-crack').html(s.crack_time_display);
+    // alters writing to show time to crack
+    $('#time-to-crack').html(s.crack_time_display);
 
-      $('#hidden-strength').val(s.score);
+    $('#hidden-strength').val(s.score);
 
-      if (s.score >= MIN_STRENGTH){
-      	$('#save_password').removeClass('disabled');
-      }
-      else{
-      	$('#save-password').addClass('disabled');
-      }
+    // doesn't allow password to be saved if Min Strength is not met
+    if (s.score >= MIN_STRENGTH){
+    	$('#save_password').removeClass('disabled');
+    }
+    else{
+    	$('#save-password').addClass('disabled');
+    }
 	});
-	$('#new_user').on('submit', function(){
+
+    // doesn't allow page reload if Min Strength is not met
 		if ($('hidden-strength').val() < MIN_STRENGTH){
 			return false;
 		}

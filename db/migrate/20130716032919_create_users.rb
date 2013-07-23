@@ -1,6 +1,7 @@
 class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
+      # fields in the table
       t.string :email
       t.string :fish
       t.string :salt
