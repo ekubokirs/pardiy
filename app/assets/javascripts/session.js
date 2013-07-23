@@ -31,7 +31,6 @@ $(function(){
 			$(this).html('Click Here to Log In')
 			// adds class
 			$(this).addClass("passwordHidden")
-			
 		}
 		return false;
 	});
