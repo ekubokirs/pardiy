@@ -1,9 +1,9 @@
 class CreateProfiles < ActiveRecord::Migration
   def change
     create_table :profiles do |t|
-      t.string :username
-      t.string :fish
-      t.integer :birthdate
+      t.string :birthdate
+      t.string :city
+      t.string :state
       t.text :bio
 
       t.timestamps
