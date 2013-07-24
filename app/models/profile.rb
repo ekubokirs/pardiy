@@ -3,5 +3,7 @@ class Profile < ActiveRecord::Base
 	validates :city, presence: true
 	validates :state, presence: true
 	validates :bio, presence: true
+
+	
 	
 end
