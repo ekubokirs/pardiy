@@ -1,2 +1,16 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
+$('.supplyblockadd').click(function(){
+		var html =$('.supplyblock').first().clone();
+ 			html.css('display','none');
+ 		$(this).before(html);
+ 			html.slideDown(600);
+			html.find('input').val('');
+		return false;
+	});
+$('.projectblockadd').click(function(){
+		var html =$('.projectblock').first().clone();
+ 			html.css('display','none');
+ 		$(this).before(html);
+ 			html.slideDown(600);
+			html.find('input').val('');
+		return false;
+	});
