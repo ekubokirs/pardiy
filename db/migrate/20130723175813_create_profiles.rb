@@ -1,7 +1,7 @@
 class CreateProfiles < ActiveRecord::Migration
   def change
     create_table :profiles do |t|
-      t.string :birthdate
+      t.date :birthdate
       t.string :city
       t.string :state
       t.text :bio

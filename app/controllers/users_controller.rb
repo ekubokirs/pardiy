@@ -10,6 +10,10 @@ class UsersController < ApplicationController
   def new
     # if params[:id]
       @user = User.new 
+      @profile = Profile.new(params[:profile].permit(:birthdate, :city, :state, :bio))
+
+      @profile.save
+
     # else
     #   redirect_to root_path
     # end
