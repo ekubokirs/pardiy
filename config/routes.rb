@@ -17,6 +17,7 @@ Pardiy::Application.routes.draw do
   get "logout" => "session#destroy"
   
   resources :users
+  resources :profiles
   
   root 'site#index'
 end

@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20130723175813) do
   enable_extension "plpgsql"
 
   create_table "profiles", force: true do |t|
-    t.string   "birthdate"
+    t.date     "birthdate"
     t.string   "city"
     t.string   "state"
     t.text     "bio"

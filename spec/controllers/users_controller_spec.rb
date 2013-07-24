@@ -15,6 +15,22 @@ describe UsersController do
 		it {should_not be_valid}
 	end
 
+	describe "when city is not present" do
+		before { @profile.city = " "}
+		it {should_not be_valid}
+	end
+
+	describe "when state is not present" do
+		before { @profile.state = " "}
+		it {should_not be_valid}
+	end
+
+	describe "when bio is not present" do
+		before { @profile.bio = " "}
+		it {should_not be_valid}
+	end
+
+	
 
 
 
