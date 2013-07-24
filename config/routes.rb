@@ -1,5 +1,10 @@
 Pardiy::Application.routes.draw do
   
+  get "event/new"
+  get "event/create"
+  get "event/edit"
+  get "event/update"
+  get "event/destroy"
   get "privacy" => "site#privacy"
   get "terms" => "site#terms"
   
