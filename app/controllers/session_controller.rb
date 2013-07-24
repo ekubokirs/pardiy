@@ -37,7 +37,8 @@ class SessionController < ApplicationController
       user = User.authenticate(params[:email], params[:password])
 
       #logs in user if email and password exist 
-      puts user
+      puts params[:email]
+      puts params[:password]
       if user
         puts 'maybe'
         session[:user_id] = user.id
