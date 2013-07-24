@@ -40,11 +40,8 @@ class SessionController < ApplicationController
       puts params[:email]
       puts params[:password]
       if user
-        puts 'maybe'
         session[:user_id] = user.id
         redirect_to root_url, alert: "You've Logged In!" and return
-      else
-        puts 'broken'
       end
       render :new and return
     end

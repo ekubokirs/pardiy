@@ -6,6 +6,7 @@ $('.supplyblockadd').click(function(){
 			html.find('input').val('');
 		return false;
 	});
+
 $('.projectblockadd').click(function(){
 		var html =$('.projectblock').first().clone();
  			html.css('display','none');
