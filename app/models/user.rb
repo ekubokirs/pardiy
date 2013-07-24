@@ -10,13 +10,10 @@ class User < ActiveRecord::Base
 	def self.authenticate(email, password)
 		# find user by email
 		user = User.find_by(email: email)
-		puts user
 		if user
 			# runs the entered password through the salt
 			fish = BCrypt::Engine.hash_secret(password, user.salt)
 			
-			puts user.fish
-			puts fish
 			# if the password entered gets passed through the salt and returned as the same, the user is true
 			if user.fish == fish
 				return user
