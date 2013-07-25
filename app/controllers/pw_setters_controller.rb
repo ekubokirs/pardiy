@@ -2,7 +2,7 @@ class PwSettersController < ApplicationController
 	# GET / pw_setters/:code - shows new password set page
 	def new 
 		@user = User.find_by_code params[:code]
-		@user.email = user_params[:email]
+		@user.email = User.find_by_email params[:email]
 
 	end
 
