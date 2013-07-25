@@ -1,0 +1,2 @@
+class PwSettersController < ApplicationController
+end
