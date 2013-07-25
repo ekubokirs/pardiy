@@ -1,5 +1,5 @@
 Pardiy::Application.routes.draw do
-  
+
   get "privacy" => "site#privacy"
   get "terms" => "site#terms"
   
@@ -15,6 +15,7 @@ Pardiy::Application.routes.draw do
   resources :users
   resources :profiles
   resources :events
-  
+  resources :pw_setters
+
   root 'site#index'
 end
