@@ -11,11 +11,9 @@ Pardiy::Application.routes.draw do
   delete "logout" => "session#destroy"
   get "logout" => "session#destroy"
 
-  # get "pw_setter" => "pw_setter#new", as: :setpassword
-  # post "pw_setter" => "pw_setter#create"
-
   
   resources :users
+  #get "users/new/:code" => "users#new"
   resources :profiles
   resources :events
   resources :pw_setters

@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def new
     # if params[:id]
-      @user = User.new 
+      @user = User.find_by_code params[:code]
       @profile = Profile.new
 
     # else
