@@ -11,10 +11,9 @@
 	<%#= First row beneath Logo%>
 	<div class="row">
 		<div class="large-12 columns">
-			<%= form_for @pw_setter, url: pw_setter_path, method: :post do |f| %>
+			<%= form_for :post, url: pw_setters_path do |f| %>
 			<p>
-				<%= f.label :email %>
-				<%= f.email_field :email%>
+				<%= :email %>
 			</p>
 
 			<p>
