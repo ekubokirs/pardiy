@@ -36,4 +36,7 @@ RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = true
 
+  config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
+
 end
