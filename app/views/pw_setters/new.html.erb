@@ -1,0 +1,36 @@
+<%#= Over all page %>
+<div class="background">
+
+	<%#= Page Logo%>
+	<div class= "row">
+		<div class="large-12 columns">
+			<h1 class="pagehead logo">ParDIY</h1>
+		</div>
+	</div>
+
+	<%#= First row beneath Logo%>
+	<div class="row">
+		<div class="large-12 columns">
+			<%= form_for @pw_setter, url: pw_setter_path, method: :post do |f| %>
+			<p>
+				<%= f.label :email %>
+				<%= f.email_field :email%>
+			</p>
+
+			<p>
+				<%= f.label :Password %>
+				<%= f.text_field :fish %>
+			</p>
+
+			<p>
+				<%= f.label :Password_Confirmation%>
+				<%= f.text_field :fish %>
+			</p>
+
+			<p>
+				<%= f.submit %>
+			</p>
+			<% end %>
+		</div>
+	</div>
+</div>

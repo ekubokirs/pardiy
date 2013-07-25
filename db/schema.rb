@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20130725181039) do
   create_table "events", force: true do |t|
     t.string   "title"
     t.string   "venue"
-    t.string   "event_type"
+    t.string   "type"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20130725181039) do
 
   create_table "supplies", force: true do |t|
     t.integer  "event_id"
+    t.string   "supply"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
