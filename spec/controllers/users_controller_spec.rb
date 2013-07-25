@@ -30,8 +30,4 @@ describe UsersController do
 		it {should_not be_valid}
 	end
 
-	
-
-
-
 end

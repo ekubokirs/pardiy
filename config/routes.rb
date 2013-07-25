@@ -10,6 +10,7 @@ Pardiy::Application.routes.draw do
   post "login" => "session#create"
   delete "logout" => "session#destroy"
   get "logout" => "session#destroy"
+
   
   resources :users
   resources :profiles
