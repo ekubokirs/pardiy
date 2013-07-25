@@ -3,47 +3,52 @@ class SessionController < ApplicationController
   end
 
   def create
-    #execute this if the password is blank
-    if params[:password].blank?
-      #find the user by these parameters
-      user = User.find_by(email: params[:email])
-
-      if user
-        #generate random code
-        user.code = SecureRandom.urlsafe_base64
-        #the code expires at a certain time from time sent
-        user.expires_at = Time.now + 48. hours
-        user.save
-
-        #calls mailer/password_mailer.rb to send reset email
-        PasswordMailer.reset_email(user).deliver
-
-      else 
-        #defines the variavle user as something new
-        user = User.new
-        user.code = SecureRandom.urlsafe_base64
-        user.expires_at = Time.now + 48. hours
-        #defines what the user email is for the mailer
-        user.email = params[:email]
-        user.save
-
-        PasswordMailer.new_email(user).deliver
-      end
-      
-    render :new
-
-    # if there is a password then the following executes
+    if params[:email].blank?
+      render :new, flash: "Please Enter E-Mail"
+    
     else
-      user = User.authenticate(params[:email], params[:password])
+      #execute this if the password is blank
+      if params[:password].blank?
+        #find the user by these parameters
+        user = User.find_by(email: params[:email])
 
-      #logs in user if email and password exist 
-      puts params[:email]
-      puts params[:password]
-      if user
-        session[:user_id] = user.id
-        redirect_to root_url, alert: "You've Logged In!" and return
+        if user
+          #generate random code
+          user.code = SecureRandom.urlsafe_base64
+          #the code expires at a certain time from time sent
+          user.expires_at = Time.now + 48. hours
+          user.save
+
+          #calls mailer/password_mailer.rb to send reset email
+          PasswordMailer.reset_email(user).deliver
+
+        else 
+          #defines the variable user as something new
+          user = User.new
+          user.code = SecureRandom.urlsafe_base64
+          user.expires_at = Time.now + 48. hours
+          #defines what the user email is for the mailer
+          user.email = params[:email]
+          user.save
+
+          PasswordMailer.new_email(user).deliver
+        end
+        
+      render :new
+
+      # if there is a password then the following executes
+      else
+        user = User.authenticate(params[:email], params[:password])
+
+        #logs in user if email and password exist 
+        puts params[:email]
+        puts params[:password]
+        if user
+          session[:user_id] = user.id
+          redirect_to root_url, alert: "You've Logged In!" and return
+        end
+        render :new and return
       end
-      render :new and return
     end
   end
   
