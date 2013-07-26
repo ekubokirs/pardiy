@@ -1,13 +1,20 @@
 .emaildisp {
+	padding-top: 19px;
 	padding-top: 20px;
 	text-align: center;
 	margin: 10px;
 }
+
 #welcome{
 	font-size: 30px;
 	font-family: 'Caudex', cursive;
 }
-.email{
+
+.email {
 	font-size: 20px;
 	font-family: 'Caudex', cursive;
+}
+
+.toplevel {
+	width: 50px;
 }
