@@ -31,7 +31,7 @@ class SessionController < ApplicationController
           user.email = params[:email]
           user.save
 
-          PasswordMailer.new_email(user).deliver
+          PasswordMailer.registration_email(user).deliver
         end
         
       render :new
@@ -45,9 +45,9 @@ class SessionController < ApplicationController
         puts params[:password]
         if user
           session[:user_id] = user.id
-          redirect_to dashboard_new_url, alert: "You've Logged In!" and return
+          redirect_to root_url :code, alert: "You've Logged In!" and return
         end
-        render :new and return
+        render :new
       end
     end
   end
