@@ -37,15 +37,6 @@ ActiveRecord::Schema.define(version: 20130725232832) do
     t.datetime "updated_at"
   end
 
-  create_table "profiles", force: true do |t|
-    t.date     "birthdate"
-    t.string   "city"
-    t.string   "state"
-    t.text     "bio"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "pw_setters", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -61,6 +52,10 @@ ActiveRecord::Schema.define(version: 20130725232832) do
 
   create_table "users", force: true do |t|
     t.string   "email"
+    t.date     "birthdate"
+    t.string   "city"
+    t.string   "state"
+    t.text     "bio"
     t.string   "fish"
     t.string   "salt"
     t.string   "code"
