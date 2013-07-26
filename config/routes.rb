@@ -12,7 +12,6 @@ Pardiy::Application.routes.draw do
   get "logout" => "session#destroy"
 
   get "users/new/:code" => "users#new"
-
   
   resources :users
   resources :events
