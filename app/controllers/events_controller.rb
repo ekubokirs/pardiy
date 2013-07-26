@@ -7,13 +7,17 @@ class EventsController < ApplicationController
   def create
     @event = Event.create event_params
     
-    @supply = Supply.create supply_params
-    @event.supplies << @supply
+
+   supply_params["supplies"].each do |supply|
+      puts supply.inspect
+      new_supply = Supply.create supply
+      @event.supplies << new_supply
+    end 
     
-    puts chore_params.class
-    chore_params.each do |chore|
-      Chore.create! chore: chore
-      @event.chores << chore
+
+    chore_params["chores"].each do |chore|
+      new_chore = Chore.create :chore => chore
+      @event.chores << new_chore
     end
 
     redirect_to root_url
@@ -47,10 +51,10 @@ class EventsController < ApplicationController
   end
 
   def supply_params
-    params.permit(:supply, :amount)
+    params.permit(:supplies => [:amount, :supply])
   end
 
   def chore_params
-    params.permit(:chores)
+    params.permit(:chores => [])
   end
 end
