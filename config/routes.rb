@@ -11,12 +11,11 @@ Pardiy::Application.routes.draw do
   delete "logout" => "session#destroy"
   get "logout" => "session#destroy"
 
-  get "users/new/:code" => "users#new"
+  get "register/:code" => "users#new", as: :registration
+  post "register/:code" => "users#create"
   
   resources :users
   resources :events
-  resources :pw_setters
-  resources :dashboards
 
 
   root 'site#index'

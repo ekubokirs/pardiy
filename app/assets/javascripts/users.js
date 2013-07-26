@@ -8,7 +8,7 @@ $('#toggle-password').on('click', function(evt){
 			$(this).addClass('success');
 
 			// shows password text
-			$('#newpassword').attr('type','text')
+			$('#user_password').attr('type','text')
 		}
 
 		else{
@@ -20,7 +20,7 @@ $('#toggle-password').on('click', function(evt){
 			$(this).addClass('alert');
 
 			// hides password text
-			$('#newpassword').attr('type','password')
+			$('#user_password').attr('type','password')
 		}
 	
 		return false;

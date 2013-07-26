@@ -28,9 +28,9 @@ class User < ActiveRecord::Base
 
 	# encrypts password so it is never stored as entered
 	def encrypt_password
-
-		self.salt = BCrypt::Engine.generate_salt
-		self.fish = BCrypt::Engine.hash_secret(self.password, self.salt)
-
+		unless password.blank?
+			self.salt = BCrypt::Engine.generate_salt
+			self.fish = BCrypt::Engine.hash_secret(self.password, self.salt)
+		end
 	end
 end
