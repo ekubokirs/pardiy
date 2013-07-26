@@ -1,10 +1,10 @@
 class CreateSupplies < ActiveRecord::Migration
   def change
     create_table :supplies do |t|
-    	t.references :event
     	t.string :supply
+    	t.string :amount
 
-
+    	t.references :event
 
       t.timestamps
     end
