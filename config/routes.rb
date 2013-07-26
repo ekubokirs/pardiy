@@ -13,7 +13,6 @@ Pardiy::Application.routes.draw do
 
   
   resources :users
-  #get "users/new/:code" => "users#new"
   resources :profiles
   resources :events
   resources :pw_setters
