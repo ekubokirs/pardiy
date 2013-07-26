@@ -9,38 +9,30 @@
 	</div>
 
 	<%#= First row beneath Logo%>
-	<div class="row">
-		<div class= "large-4 columns">
-			<%= form_for :user do |f| %>
-			<p class="row">
-				<%= :email %>
-			</p>
+	<%= form_for @user do |f| %>
+		<div class="row">
+			<div class= "large-4 columns">
+				<p class="row">
+					<%= @user.email %>
 
-			<p>
-				<%= f.label :Password %>
-				<%= f.text_field :fish %>
-			</p>
+				</p>
 
-			<p>
-				<%= f.submit %>
-			</p>
-			<% end %>
+				<p>
+					<%= f.label :Password %>
+					<%= f.text_field :fish %>
+				</p>
+
+			</div>
+
+			<div class= "large-8 columns">		
+			
+				<%= f.label :birthdate %>
+				<%= f.date_field :birthdate %>
+			
+				<%= f.label :zip %>
+				<%= f.text_field :city %>			
+			</div>
 		</div>
-
-		<div class= "large-8 columns">			
-
-			<%= form_for @profile do |f| %>
-
-		
-			<%= f.label :birthdate %>
-			<%= f.date_field :birthdate %>
-		
-
-		
-			<%= f.label :zip %>
-			<%= f.text_field :city %>			
-		</div>
-	</div>
 		<div class="row">
 			<div class="large-12">	
 				<p>
@@ -50,8 +42,8 @@
 				<p>
 					<%= f.submit %>
 				</p>
-				<% end %>
 			</div>
 		</div>	
+	<% end %>
 </div> 
 
