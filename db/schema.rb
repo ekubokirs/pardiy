@@ -16,6 +16,13 @@ ActiveRecord::Schema.define(version: 20130725232832) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "chores", force: true do |t|
+    t.string   "chore"
+    t.integer  "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "events", force: true do |t|
     t.string   "title"
     t.string   "venue"
@@ -42,13 +49,6 @@ ActiveRecord::Schema.define(version: 20130725232832) do
   create_table "supplies", force: true do |t|
     t.string   "supply"
     t.string   "amount"
-    t.integer  "event_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "to_dos", force: true do |t|
-    t.string   "todo"
     t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"

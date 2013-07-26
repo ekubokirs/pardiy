@@ -10,8 +10,11 @@ class EventsController < ApplicationController
     @supply = Supply.create supply_params
     @event.supplies << @supply
     
-    @todo = ToDo.create todo_params
-    @event.todo << @todo
+    puts chore_params.class
+    chore_params.each do |chore|
+      Chore.create! chore: chore
+      @event.chores << chore
+    end
 
     redirect_to root_url
   end
@@ -47,7 +50,7 @@ class EventsController < ApplicationController
     params.permit(:supply, :amount)
   end
 
-  def todo_params
-    params.permit(:todo)
+  def chore_params
+    params.permit(:chores)
   end
 end
