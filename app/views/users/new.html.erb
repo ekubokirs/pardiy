@@ -11,44 +11,56 @@
 	<%#= First row beneath Logo%>
 	<%= form_for @user do |f| %>
 		<div class="row">
-			<div class= "large-4 columns">
-				<p class="row">
-					<div class="emaildisp">
-						<p> Welcome!  You are logged in as:
-						<%= @user.email %>.
-						</p>
-						<p>Let's get your profile started!</p>
-					</div>
-				</p>
-
-				<p>
-					<%= f.label :Password %>
-					<%= f.text_field :fish %>
-				</p>
-
-				<%= f.label :birthdate %>
-				<%= f.date_field :birthdate %>
-			
-				<%= f.label :zip %>
-				<%= f.text_field :city %>
-
-			</div>
-
-			<div class= "large-8 columns">	
-							
-			</div>
+			<div class="emaildisp">
+				<div id="welcome"> Welcome!</div>
+				<div class="email">You are logged in as:<br>
+					<%= @user.email %>.
+				</div>
+				<div class="email">Let's get your profile started!</div>
+				</div>
 		</div>
+		<hr>
 		<div class="row">
-			<div class="large-12">	
-				<p>
+			<div class="large-6 columns">
+				<%= f.label :Password %>
+					<%= f.password_field :fish, id: "newpassword" %>
+				<%= f.label :Password_Confirmation %>
+				<%= f.password_field :PasswordConfirmation %>
+			</div>
+			<p>
+      	<input id="hidden-strength" type="hidden" name="strength" value="0">
+        <%= f.hidden_field :code %>
+      </p>
+			<div class="large-6 columns">
+				<div id="showPassword">
+					<button id="toggle-password" class="small button alert">Show Password</button>
+				</div>
+      	<div class="progress large-5 strength-meter">
+        	<span id="strength-meter" class="meter w-0"></span>
+      	</div>
+      	<div>Time to crack: <span id="time-to-crack">n/a</span>
+      	</div>
+    	</div>
+		</div>
+		<hr>
+		<div class="row">
+				<div class="large-6 columns">
+					<%= f.label :birthdate %>
+					<%= f.date_field :birthdate %>
+				</div>
+				<div class="large-6 columns">
+					<%= f.label :zip %>
+					<%= f.text_field :city %>
+				</div>
+				<div class="large-12 columns">
 					<%= f.label :bio %>
 					<%= f.text_area :bio %>
-				</p>
-				<p>
-					<%= f.submit %>
-				</p>
+				</div>
 			</div>
-		</div>	
+			<div class="row">
+				<div class="large-2 columns large-offset-10">
+					<%= f.submit class: "small button" %>
+				</div>
+			</div>
 	<% end %>
 </div> 
-

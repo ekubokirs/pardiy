@@ -45,7 +45,7 @@ class SessionController < ApplicationController
         puts params[:password]
         if user
           session[:user_id] = user.id
-          redirect_to root_url, alert: "You've Logged In!" and return
+          redirect_to dashboard_new_url, alert: "You've Logged In!" and return
         end
         render :new and return
       end
