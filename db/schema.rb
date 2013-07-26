@@ -11,12 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130725232227) do
+
+ActiveRecord::Schema.define(version: 20130725232832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+
   create_table "dashboards", force: true do |t|
+  end
+
+  create_table "chores", force: true do |t|
+    t.string   "chore"
+    t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -24,7 +31,7 @@ ActiveRecord::Schema.define(version: 20130725232227) do
   create_table "events", force: true do |t|
     t.string   "title"
     t.string   "venue"
-    t.string   "type"
+    t.string   "event_type"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -45,8 +52,9 @@ ActiveRecord::Schema.define(version: 20130725232227) do
   end
 
   create_table "supplies", force: true do |t|
-    t.integer  "event_id"
     t.string   "supply"
+    t.string   "amount"
+    t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

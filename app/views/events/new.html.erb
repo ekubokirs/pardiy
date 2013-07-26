@@ -9,6 +9,7 @@
 			<span>New Event</span>
 		</div>
 	</div>
+
 	<form action="/events" method="POST">
 		<div class="row">
 			<div class="large-12 columns">
@@ -35,6 +36,7 @@
 					<option>Baby Shower</option>
 					<option>Holiday</option>
 					<option>Bachelor/Bachlorette</option>
+					<option>Other</option>
 				</select>
 			</div>
 		</div>
@@ -44,8 +46,8 @@
 				<label class="details">Needed Supplies</label>
 				<label>Amount</label>
 				<div class="supplyblock">
-					<input type="text" class="large-5 columns" placeholder="12 packages"/>
-					<input type="text" class="large-5 columns large-offset-1" placeholder="mailing labels"/><hr />
+					<input name="amount" type="text" class="large-5 columns" placeholder="12 packages"/>
+					<input name="supply" type="text" class="large-6 columns large-offset-1" placeholder="mailing labels"/><hr />
 				</div>
 				<span>
 					<a href="#" class="supplyblockadd link">+ Add Supply</a>
@@ -55,7 +57,7 @@
 				<div class="row">
 					<label>Project To Do</label>
 					<div class="projectblock">
-						<input type="text" placeholder="Make Invitations">
+						<input name="chores[]" type="text" placeholder="Make Invitations">
 					</div>
 					<span>
 						<a href="#" class="projectblockadd link">+ Add Project</a>
@@ -63,6 +65,7 @@
 				</div>
 			</div>
 		</div>
+		<br>
 		<button type="submit" class="tiny button">Save &amp; Continue</button>
 	</form>
 </div>
