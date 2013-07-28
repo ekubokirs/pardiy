@@ -14,12 +14,17 @@ class Event < ActiveRecord::Base
 	require 'json'
 
 	def get_recipes
-		# recipe not finished
-		recipes_json = open("http://food2fork.com/api/search?key=8325696c6a6bf0ba5bbffd05deb1aff6&q=" +"birthday")
+		type = self.event_type.downcase
 
-		recipes = JSON.parse(recipes_json)
+		api_url = "http://www.recipepuppy.com/api/?q=" + type
 
-		
+		data = open(api_url).read
+
+		datahash = JSON.parse(data)
+
+		puts api_url
+
+		puts datahash	
 	end
 
 end

@@ -10,7 +10,6 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.create event_params
-    
 
    supply_params["supplies"].each do |supply|
       puts supply.inspect
@@ -39,6 +38,13 @@ class EventsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def show
+    @event = Event.find params[:id]
+
+    recipes = @event.get_recipes
+
   end
 
   def destroy
