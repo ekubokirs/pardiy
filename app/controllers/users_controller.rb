@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @user = User.create user_params
 
     if @user
-      redirect_to dashboard_path, status: 303
+      redirect_to root_url, status: 303
     else
       render :new
     end
