@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :is_authenticated
 
   def index
-    @event = Event.all
+    @events = Event.all
   end
   
 

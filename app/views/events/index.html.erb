@@ -1,0 +1,32 @@
+<div class="background">
+	<%#= Page Logo%>
+	<div class= "row">
+		<div class="large-12 columns">
+			<h1 class="pagehead logo">ParDIY</h1>
+		</div>
+	</div>
+	<div class="row">
+		<table class="table large-12 columns">
+			<tbody>
+				<% @events.each do |event| %>
+					<tr>
+						<td>
+							<%= link_to event.title, event %>
+						</td>
+						<td>
+	          	<%= link_to "edit", edit_event_url(event) %>
+	          </td>
+						<td>
+							<%= link_to "delete", event, method: :delete, confirm: "Are you sure?" %>
+						</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+	<div class="row">
+		<p>
+			<%= link_to "Add an Event", new_event_url %>
+		</p>
+	</div>
+</div>
