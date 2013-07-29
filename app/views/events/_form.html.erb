@@ -1,0 +1,19 @@
+<%= form_for @event, html: { autocomplete: :off } do |f| %>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
+  <div class="row">
+    <p class="large-6 colums">
+      <%= f.label :venue %>
+      <%= f.text_field :venue %>
+    </p>
+    <p class="large-6 colums">
+      <%= f.label :event_type %>
+      <%= f.text_field :event_type %>
+    </p>
+  </div>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
