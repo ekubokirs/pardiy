@@ -7,8 +7,18 @@
   </div>
   <div class="row">
     <div class="large-6 columns">
+
       <%= f.label :venue %>
-      <%= f.text_field :venue %>
+      <%=f.select :venue, options_for_select(%w[Home Indoor Outdoor Multiple]) %>
+      <!-- <label for "customDropdown1">Venue</label>
+      <select id="customDropdown" class ="medium">
+        <option>Home</option>
+        <option>Indoor Venue</option>
+        <option>Outdoor Venue</option>
+        <option>Multiple Locations</option>
+      </select>-->
+      
+      <%#= f.text_field :venue %> 
     </div>
     <div class="large-6 columns">
       <%= f.label :event_type %>
