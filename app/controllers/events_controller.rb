@@ -60,7 +60,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params[:event].permit(:title, :venue, :event_type)
+    params.permit(:title, :venue, :event_type)
   end
 
   def supply_params
