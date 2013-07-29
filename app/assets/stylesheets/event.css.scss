@@ -23,16 +23,23 @@ label{
 	border-color: #002649;
 	margin: 10px;
 }
-.event_title{
+.title{
 	color: #002649;
 	font-family: 'Unkempt', cursive;
 	font-size: 45px;
 	text-align: center;
 }
-.event{
+.info1{
 	color: #002649;
 	font-family: 'Caudex', cursive;
-	font-size: 20px;
-	text-align: center;
+	font-size: 25px;
 	margin: 15px;
+	text-align: center;
+}
+.info{
+	color: #002649;
+	font-family: 'Caudex', cursive;
+	font-size: 25px;
+	margin: 15px;
+	padding: 10px;
 }
