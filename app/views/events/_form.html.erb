@@ -9,20 +9,11 @@
     <div class="large-6 columns">
 
       <%= f.label :venue %>
-      <%=f.select :venue, options_for_select(%w[Home Indoor Outdoor Multiple]) %>
-      <!-- <label for "customDropdown1">Venue</label>
-      <select id="customDropdown" class ="medium">
-        <option>Home</option>
-        <option>Indoor Venue</option>
-        <option>Outdoor Venue</option>
-        <option>Multiple Locations</option>
-      </select>-->
-      
-      <%#= f.text_field :venue %> 
+      <%= f.select :venue, options_for_select(%w[Home Indoor Outdoor Multiple]) %> 
     </div>
     <div class="large-6 columns">
       <%= f.label :event_type %>
-      <%=f.select :event_type, options_for_select(%w[Adult's_Birthday Baby_Shower Bachelor/Bachelorette Child's_Birtday Graduation Holiday Housewarming Wedding Wedding_Shower Other]) %>
+      <%= f.select :event_type, options_for_select(%w[Adult's_Birthday Baby_Shower Bachelor/Bachelorette Child's_Birtday Graduation Holiday Housewarming Wedding Wedding_Shower Other]) %>
     </div>
   </div>
   <div>

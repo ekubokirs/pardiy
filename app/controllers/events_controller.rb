@@ -35,9 +35,9 @@ class EventsController < ApplicationController
   end
 
   def update
-    @event = Event.find params[:id]
+    @event = Event.find(params[:id])
 
-    if  @event.update_attributes(event_params)
+    if  @event.update_attributes(params[:event].permit(:title, :venue, :event_type))
       redirect_to root_url, status:303
     else
       render :edit
@@ -61,7 +61,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.permit(:title, :venue, :event_type)
+    params[:event].permit(:title, :venue, :event_type)
   end
 
   def supply_params
