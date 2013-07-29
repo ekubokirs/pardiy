@@ -4,9 +4,9 @@
     <script type="text/javascript">
       $(function() {
         noty({
-          type: '<%= name == :notice ? "success" : "error" %>',
+          type: '<%= name == :alert ? "success" : "error" %>',
           text: '<%= msg %>',
-          timeout: <%= name == :notice ? 4000 : 30000 %>
+          timeout: <%= name == :alert ? 4000 : 30000 %>
         });
       });
     </script>

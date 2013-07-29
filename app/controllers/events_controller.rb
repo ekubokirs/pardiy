@@ -26,10 +26,9 @@ class EventsController < ApplicationController
       new_chore = Chore.create :chore => chore
       @event.chores << new_chore
     end
-
-      redirect_to root_url, notice: "Success! Event created!"
+      flash[:alert] = "Success! Event created!" 
+      redirect_to root_url 
   end
-
   def edit
     @event = Event.find params[:id]
   end

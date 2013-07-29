@@ -45,7 +45,7 @@ class SessionController < ApplicationController
         puts params[:password]
         if user
           session[:user_id] = user.id
-          redirect_to root_url :code, alert: "You've Logged In!" and return
+          redirect_to root_url :code, flash[:alert] = "You've Logged In!" and return
         end
         render :new
       end

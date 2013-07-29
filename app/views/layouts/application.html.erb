@@ -18,14 +18,15 @@
   	<%= stylesheet_link_tag    "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
+    
     <link href='http://fonts.googleapis.com/css?family=Alex+Brush|Unkempt|Caudex' rel='stylesheet' type='text/css'>
+  
   </head>
 
   <body>
 
     <%= yield %>
-
-    
+ 
     <%= javascript_include_tag "application" %>
     <%= render partial: "layouts/message" %>
   </body>

@@ -15,6 +15,7 @@ class Event < ActiveRecord::Base
 
 	def get_recipes
 		type = self.event_type.downcase
+		type = URI::encode(type)
 
 		api_url = "http://www.recipepuppy.com/api/?q=" + type
 
