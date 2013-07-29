@@ -6,7 +6,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="large-6 columns">
+    <p class="large-6 columns">
 
       <%= f.label :venue %>
       <%=f.select :venue, options_for_select(%w[Home Indoor Outdoor Multiple]) %>
@@ -19,13 +19,13 @@
       </select>-->
       
       <%#= f.text_field :venue %> 
-    </div>
-    <div class="large-6 columns">
+    </p>
+    <p class="large-6 columns">
       <%= f.label :event_type %>
       <%=f.select :event_type, options_for_select(%w[Adult's_Birthday Baby_Shower Bachelor/Bachelorette Child's_Birtday Graduation Holiday Housewarming Wedding Wedding_Shower Other]) %>
-    </div>
+    </p>
   </div>
-  <div>
+  <p class="row">
     <%= f.submit :class => "small button" %>
-  </div>
+  </p>
 <% end %>

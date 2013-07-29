@@ -6,7 +6,25 @@
 			<h1 class="pagehead logo">ParDIY</h1>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row event_title">
 		<%= @event.title %>
+		<div class="row">
+			<div class="large-6 columns info">
+				Event Location: <%= @event.venue %>
+			</div>
+			<div class="large-6 columns info">
+				Event Type: <%= @event.event_type %>
+			</div>
+			<div>
+				Supplies:
+				<ul>
+					<% @event.supplies.each do |item|%>
+										<li><%= item.id %> 
+										<%= item.amount %> 
+										<%= item.supply %></li>
+									<% end %>
+				</ul>
+			</div>
+		</div>
 	</div>
 </div>
