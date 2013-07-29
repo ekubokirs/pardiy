@@ -16,7 +16,7 @@ Pardiy::Application.routes.draw do
   
   resources :users
   resources :events
-
+  resources :photos
 
   root 'site#index'
 end
