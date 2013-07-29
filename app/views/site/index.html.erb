@@ -5,7 +5,6 @@
 			<h1 class="pagehead logo">ParDIY</h1>
 		</div>
 	</div>
-
   <%#= Top Nav Bar%>
 	<div class= "row">
 		<nav class="top-bar">
@@ -75,9 +74,14 @@
         </ul>
       </section>
     </nav>
-    <div>
-      <img src="../assets/images/cupcakeLego.JPG" alt= "Lego cupcakes">
-    </div>
+  </div>
+    <% if flash[:alert] %>
+      <div class="alert-box">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+  <div>
+    <img src="../assets/images/cupcakeLego.JPG" alt= "Lego cupcakes">
   </div>
 </div> 
 
