@@ -27,7 +27,7 @@ class EventsController < ApplicationController
       @event.chores << new_chore
     end
 
-    redirect_to root_url
+      redirect_to root_url, notice: "Success! Event created!"
   end
 
   def edit
