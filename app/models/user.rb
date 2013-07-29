@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
 	#encrypts password using definition at bottom before saving info in database
 	before_save :encrypt_password
 
+	has_many :events
+
 	attr_accessor :password, :password_confirmation
 
 	validates :password, confirmation: true

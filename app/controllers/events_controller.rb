@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_action :is_authenticated
+
   def index
     @event = Event.all
   end
@@ -10,13 +12,15 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.create event_params
+    @event.user = current_user
+    @event.save
 
-   supply_params["supplies"].each do |supply|
+    supply_params["supplies"].each do |supply|
       puts supply.inspect
       new_supply = Supply.create supply
       @event.supplies << new_supply
     end 
-    
+
 
     chore_params["chores"].each do |chore|
       new_chore = Chore.create :chore => chore
