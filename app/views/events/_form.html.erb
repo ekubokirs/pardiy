@@ -22,7 +22,7 @@
     </div>
     <div class="large-6 columns">
       <%= f.label :event_type %>
-      <%= f.text_field :event_type %>
+      <%=f.select :event_type, options_for_select(%w[Adult's_Birthday Baby_Shower Bachelor/Bachelorette Child's_Birtday Graduation Holiday Housewarming Wedding Wedding_Shower Other]) %>
     </div>
   </div>
   <div>
