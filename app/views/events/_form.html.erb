@@ -16,7 +16,23 @@
       <%= f.select :event_type, options_for_select(%w[Adult's_Birthday Baby_Shower Bachelor/Bachelorette Child's_Birtday Graduation Holiday Housewarming Wedding Wedding_Shower Other]) %>
     </p>
   </div>
-
+  <%= form_for @event.supplies, html: { autocomplete: :off } do |f| %>
+    Supplies:
+    <ul>
+      <% @event.supplies.each do |item|%>
+        <li> 
+          <%= f. select :item.amount %> 
+          <%= f.select :item.supply %>
+        </li>
+      <% end %>
+    </ul>
+  <%= end %>
+    Project To Dos:
+    <ul>
+      <% @event.chores.each do |item|%>
+        <li> <%= item.chore %> </li>
+      <% end %>
+    </ul>
 
 
   <!-- HTML of Fields to Update-- want them in ruby
