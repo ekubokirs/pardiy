@@ -21,7 +21,6 @@ class EventsController < ApplicationController
       @event.supplies << new_supply
     end 
 
-
     chore_params["chores"].each do |chore|
       new_chore = Chore.create :chore => chore
       @event.chores << new_chore
