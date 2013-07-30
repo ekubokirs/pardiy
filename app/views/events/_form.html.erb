@@ -9,11 +9,11 @@
     <p class="large-6 columns">
 
       <%= f.label :venue %>
-      <%= f.select :venue, options_for_select(%w[Home Indoor Outdoor Multiple]) %> 
+      <%= f.select :venue, options_for_select(%w[Home Indoor Outdoor Multiple], @event.venue) %> 
     </p>
     <p class="large-6 columns">
       <%= f.label :event_type %>
-      <%= f.select :event_type, options_for_select(%w[Adult's_Birthday Baby_Shower Bachelor/Bachelorette Child's_Birtday Graduation Holiday Housewarming Wedding Wedding_Shower Other]) %>
+      <%= f.select :event_type, options_for_select(%w[Adult's_Birthday Baby_Shower Bachelor/Bachelorette Child's_Birtday Graduation Holiday Housewarming Wedding Wedding_Shower Other], @event.event_type) %>
     </p>
   </div>
 

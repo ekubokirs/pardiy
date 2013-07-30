@@ -46,7 +46,6 @@ class EventsController < ApplicationController
     @event = Event.find params[:id]
 
     @recipes = @event.get_recipes
-
   end
 
   def destroy
