@@ -13,6 +13,8 @@ Pardiy::Application.routes.draw do
 
   get "register/:code" => "users#new", as: :registration
   post "register/:code" => "users#create"
+
+  get "users/:id" => "users#show"
   
   resources :users
   resources :events
