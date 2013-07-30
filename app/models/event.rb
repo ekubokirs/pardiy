@@ -22,10 +22,6 @@ class Event < ActiveRecord::Base
 		data = open(api_url).read
 
 		datahash = JSON.parse(data)
-
-		puts api_url
-
-		puts datahash	
 	end
 
 end
