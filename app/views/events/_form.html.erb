@@ -15,8 +15,35 @@
       <%= f.label :event_type %>
       <%= f.select :event_type, options_for_select(%w[Adult's_Birthday Baby_Shower Bachelor/Bachelorette Child's_Birtday Graduation Holiday Housewarming Wedding Wedding_Shower Other]) %>
     </p>
-
   </div>
+
+
+
+  <!-- HTML of Fields to Update-- want them in ruby
+  <div class="row">
+      <div class="large-6 columns">
+        <label class="details">Needed Supplies</label>
+        <label>Amount</label>
+        <div class="supplyblock">
+          <input name="supplies[][amount]" type="text" class="large-5 columns" placeholder="12 packages"/>
+          <input name="supplies[][supply]" type="text" class="large-6 columns large-offset-1" placeholder="mailing labels"/><hr />
+        </div>
+        <span>
+          <a href="#" class="supplyblockadd link">+ Add Supply</a>
+        </span>
+      </div>
+      <div class="large-6 columns project">
+        <div class="row">
+          <label>Project To Do</label>
+          <div class="projectblock">
+            <input name="chores[]" type="text" placeholder="Make Invitations">
+          </div>
+          <span>
+            <a href="#" class="projectblockadd link">+ Add Project</a>
+          </span>
+        </div>
+      </div> -->
+    </div>
 
   <p class="row">
     <%= f.submit :class => "small button" %>
