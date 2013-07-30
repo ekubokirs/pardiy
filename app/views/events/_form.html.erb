@@ -13,7 +13,7 @@
     </p>
     <p class="large-6 columns">
       <%= f.label :event_type %>
-      <%= f.select :event_type, options_for_select(%w[Adult's_Birthday Baby_Shower Bachelor/Bachelorette Child's_Birtday Graduation Holiday Housewarming Wedding Wedding_Shower Other], @event.event_type) %>
+      <%= f.select :event_type, options_for_select(["Adult's Birthday", "Baby Shower", "Bachelor/Bachelorette", "Child's Birtday", "Graduation", "Holiday", "Housewarming," "Wedding", "Wedding Shower", "Other"], @event.event_type) %>
     </p>
   </div>
   <div class="row">
@@ -21,7 +21,7 @@
       <%= f.label :supplies %>
       <% @event.supplies.each do |item|%>
         <li> 
-          <%= f. select :item.amount %> 
+          <%= f.select :item.amount %> 
           <%= f.select :item.supply %>
         </li>
       <% end %>
