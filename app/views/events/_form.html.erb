@@ -7,7 +7,6 @@
   </div>
   <div class="row">
     <p class="large-6 columns">
-
       <%= f.label :venue %>
       <%= f.select :venue, options_for_select(%w[Home Indoor Outdoor Multiple], @event.venue) %> 
     </p>
@@ -18,32 +17,42 @@
   </div>
   <div class="row">
     <div class="large-6 columns">
-      <% @event.supplies.each do |sup| %>
-      <%= f.label :supplies %>
-        <%= f.fields_for :supplies, sup do |s| %>
-          <ul>
-            <li> 
-              <%= s.text_field :amount, :class => "large-5 columns" %> 
-              <%= s.text_field :supply, :class => "large-6 columns" %>
-            </li>
-          </ul>
+      <div class="supplyblock">
+        <% @event.supplies.each do |sup| %>
+          <%= f.label :supplies %>
+          <%= f.fields_for :supplies, sup do |s| %>
+            <ul>
+              <li> 
+                <%= s.text_field :amount, :class => "large-5 columns" %> 
+                <%= s.text_field :supply, :class => "large-6 columns" %>
+              </li>
+            </ul>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
+     <!--  <span>
+        <a href="#" class="supplyblockadd link">+Add Supply</a>
+      </span> -->
     </div>
     <div class="large-6 columns">
-      <% @event.chores.each do |cho| %>
-      <%= f.label :projects %>
-        <%= f.fields_for :chores, cho do |p| %>
-          <ul>
-            <li> 
-              <%= p.text_field :chore %> 
-            </li>
-          </ul>
+      <div class="projectblock">
+        <% @event.chores.each do |cho| %>
+          <%= f.label :projects %>
+          <%= f.fields_for :chores, cho do |p| %>
+            <ul>
+              <li> 
+                <%= p.text_field :chore %> 
+              </li>
+            </ul>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
+      <!-- <span>
+        <a href="#" class="projectblockadd link">+Add Project</a>
+      </span> -->
     </div>
   </div>
   <p class="row">
-    <%= f.submit :class => "small button" %>
+  <%= f.submit :class => "small button" %>
   </p>
 <% end %>

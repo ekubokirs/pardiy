@@ -6,9 +6,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
-
-    user = User.city
-    @zipcode = user.region
   end
 
   def new
