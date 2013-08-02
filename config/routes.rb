@@ -15,6 +15,8 @@ Pardiy::Application.routes.draw do
   post "register/:code" => "users#create"
 
   get "/users/:id" => "users#show"
+
+  get "/profile" => "site#profile"
   
   resources :users
   resources :events

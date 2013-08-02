@@ -8,7 +8,9 @@ class Event < ActiveRecord::Base
 	belongs_to :user
 
 	has_many :supplies
+	accepts_nested_attributes_for :supplies
 	has_many :chores
+	accepts_nested_attributes_for :chores
 
 	require 'open-uri'
 	require 'json'
@@ -22,6 +24,10 @@ class Event < ActiveRecord::Base
 		data = open(api_url).read
 
 		JSON.parse(data)["results"]
+	end
+
+	def edit_supply
+		self.supplies.find id
 	end
 
 end

@@ -17,21 +17,31 @@
     </p>
   </div>
   <div class="row">
-    <ul>
+    <div class="large-6 columns">
+      <% @event.supplies.each do |sup| %>
       <%= f.label :supplies %>
-      <% @event.supplies.each do |item|%>
-        <li> 
-          <%= f.select :item.amount %> 
-          <%= f.select :item.supply %>
-        </li>
+        <%= f.fields_for :supplies, sup do |s| %>
+          <ul>
+            <li> 
+              <%= s.text_field :amount, :class => "large-5 columns" %> 
+              <%= s.text_field :supply, :class => "large-6 columns" %>
+            </li>
+          </ul>
+        <% end %>
       <% end %>
-    </ul>
-    <ul>
-      <%= f.label :Projects %>
-      <% @event.chores.each do |item|%>
-        <li> <%= item.chore %> </li>
+    </div>
+    <div class="large-6 columns">
+      <% @event.chores.each do |cho| %>
+      <%= f.label :projects %>
+        <%= f.fields_for :chores, cho do |p| %>
+          <ul>
+            <li> 
+              <%= p.text_field :chore %> 
+            </li>
+          </ul>
+        <% end %>
       <% end %>
-    </ul>
+    </div>
   </div>
   <p class="row">
     <%= f.submit :class => "small button" %>

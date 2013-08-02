@@ -6,6 +6,10 @@ class SiteController < ApplicationController
   	@user = current_user
   end
 
+  def profile
+  	@user = current_user
+  end
+
   def privacy
   end
 
