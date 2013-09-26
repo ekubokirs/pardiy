@@ -4,8 +4,8 @@ class PasswordController < ApplicationController
     @user = User.find_by(code: params[:code])
 
     # display the reset password form
-    unless @user and @user.expires_at > Time.now
-      redirect_to login_url, alert: "Reset link has expired. Please try again."
+    unless @user and @user.expires_at < Time.now
+      redirect_to login_url, alert: "Reset link has expired. Please try again. Edit."
     end
   end
 
@@ -14,7 +14,7 @@ class PasswordController < ApplicationController
     @user = User.find_by(code: params[:user][:code])
     
     # If the user exists and the code has not expired
-    if @user and @user.expires_at > Time.now
+    if @user and @user.expires_at < Time.now
       # do the password update and set the code
       @user.update_attributes(user_params)
       @user.code = nil
@@ -33,7 +33,7 @@ class PasswordController < ApplicationController
       end
     else
       # User not found or code expired, redirect to the login page
-      redirect_to login_url, alert: "Reset link has expired. Please try again."
+      redirect_to login_url, alert: "User not found. Please try again."
     end
   end
   

@@ -10,7 +10,7 @@ class SessionController < ApplicationController
       #execute this if the password is blank
       if params[:password].blank?
         #find the user by these parameters
-        user = User.find_by(email: params[:email])
+        user = User.where(email: params[:email])
 
         if user
           #generate random code

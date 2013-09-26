@@ -1,3 +1,4 @@
+
 class EventsController < ApplicationController
   before_action :is_authenticated
 
